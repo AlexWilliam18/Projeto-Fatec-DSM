@@ -1,0 +1,110 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Sans-serif;
+}
+h1 {
+    color: #BB2222;
+    font-size: 32px;
+    text-transform: uppercase;
+    padding-top: 40px;
+}
+h2 {
+    color: #2222CC;
+    font-size: 26px;
+}
+h3 {
+    color: #2222CC;
+    font-size: 26px;
+}
+header {
+    background-color: #FFCC22;
+    text-align: center;
+    width: auto;
+    height: 120px;
+}
+header h1 {
+    text-decoration: underline;
+    
+}
+main {
+    background-color: #FFF;
+    width: 65%;
+    height: 400px;
+    float: left;
+}
+main h2 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+main p {
+    padding-left: 10px;
+}
+aside h3 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+aside p {
+    padding-left: 10px;
+}
+aside {
+    background-color: #CCF1BB;
+    width: 35%;
+    height: 400px;
+    float: right;
+}
+footer {
+    background-color: #FFCC22;
+    text-align: center;
+    width: auto;
+    height: 40px;
+    clear: both;
+}
+footer p {
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+#tudo {
+    width: 900px;
+    /* border: 1px solid #555; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    color: #222222;
+}
+a:hover {
+    text-decoration:solid;
+    color: #FF1111;
+}
+nav {
+    background-color: #4488BB;
+    width: auto; 
+    height: 40px;
+}
+nav ul {
+    list-style-type: none;
+    text-transform: uppercase;
+}
+nav ul li {
+    float: left;
+}
+nav ul li a {
+    font-size: 20px;
+    width: 100px;
+
+    display: block;
+    text-align: center;
+    padding: 10px 40px 10px 40px;
+    color: #FFF;
+}
+nav ul li a:hover {
+    background-color: #FFF;
+    color: #FF1111;
+    text-shadow: 1px 1px 2px #CCC;
+}

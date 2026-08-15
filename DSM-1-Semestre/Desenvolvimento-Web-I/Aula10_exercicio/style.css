@@ -1,0 +1,21 @@
+h1 {
+    color: red;
+    font-size: 30px;
+    font-style: italic; 
+}
+h2 {
+    color: blue;
+    font-size: 24px;
+}
+.capital {
+    color: green;
+}
+a {
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+    text-decoration: none;
+    color: green;
+}
+a:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <div class="form">
+        <form action="#" method="post">
+            <label for="escolaridade">Escolaridade:</label>
+            <select name="escolaridade">
+                <option value="em">Ensino Médio</option>
+                <option value="nt">Nível Técnico</option>
+                <option value="ns">Nível Superior</option>
+            </select>
+            <br><br>
+            <label for="cargo">Cargo:</label>
+            <input type="radio" name="cargo" value="1" checked> Gerência
+            <input type="radio" name="cargo" value="2"> Financeiro
+            <input type="radio" name="cargo" value="3"> Recepção
+            <input type="radio" name="cargo" value="4"> Administrativo
+            <br><br>
+            <label for="cargo">Área:</label>
+            <input type="checkbox" name="area1" value="com"> Computação
+            <input type="checkbox" name="area2" value="eng"> Engenharia
+            <input type="checkbox" name="area3" value="bio"> Biologia
+            <input type="checkbox" name="area4" value="psi"> Psicologia
+            <br><br>
+            <label for="obs">Observação:</label>
+            <textarea name="obs" cols="20" rows="5"></textarea>
+        </form>
+        <br><br>
+        <form action="enviar.php" method="post">
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" size="10" value="Seu nome">
+                <label for="senha">Senha:</label>
+                <input type="text" name="senha" size="10" maxlength="5">
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
