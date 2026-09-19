@@ -32,11 +32,10 @@ int main()
     scanf("%d", &escolha);
     
     if (escolha >= 1 && escolha <= 5) {
-        int indice = escolha - 1;
         
         printf("\n--- Informações do Pokemon ---\n");
-        printf("Nome: %s\n", nomes[indice]);
-        printf("Tipo: %s\n", tipos[indice]);
+        printf("Nome: %s\n", nomes[escolha - 1]);
+        printf("Tipo: %s\n", tipos[escolha - 1]);
     } else {
         printf("\nOpção inválida! Escolha um número entre 1 e 5.\n");
     }
