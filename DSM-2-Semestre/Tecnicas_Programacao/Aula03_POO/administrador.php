@@ -7,7 +7,7 @@
         }
 
         public function banirJogador(string $jogador):void {
-            echo "O administrador está banindo o jogador: $jogador\n";
+            echo "O administrador está banindo o jogador: $jogador \n";
         }
 
         public function getCargo(): string{
