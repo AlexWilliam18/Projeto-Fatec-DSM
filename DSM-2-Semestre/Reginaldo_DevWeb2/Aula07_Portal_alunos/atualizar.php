@@ -1,5 +1,6 @@
 <?php
     require "includes/seguranca.php";
+    apenasAdmin(); // somente administradores
     require "conexao.php";
 
     verificarToken(); // confere o CSRF
@@ -9,6 +10,17 @@
     $email = trim($_POST["email"]);
     $senha = $_POST["senha"];
     $confirmar = $_POST["confirmar"];
+    $perfil = $_POST["perfil"];
+
+    // só aceita "admin"; qualquer outro valor vira "usuario"
+    if ($perfil != "admin") {
+        $perfil = "usuario";
+    }
+
+    // o administrador não pode tirar o próprio perfil de administrador
+    if ($id == $_SESSION["usuario_id"]) {
+        $perfil = "admin";
+    }
 
     // 1 - campos obrigatórios
     if ($nome == "" || $email == "") {
@@ -45,7 +57,8 @@
         $sql = "UPDATE usuarios SET
                 nome = :nome,
                 email = :email,
-                senha = :senha
+                senha = :senha,
+                perfil = :perfil
             WHERE id = :id";
 
         $stmt = $pdo->prepare($sql);
@@ -54,6 +67,7 @@
             ":nome" => $nome,
             ":email" => $email,
             ":senha" => password_hash($senha, PASSWORD_DEFAULT), // novo hash
+            ":perfil" => $perfil,
             ":id" => $id
         ]);
 
@@ -61,7 +75,8 @@
 
         $sql = "UPDATE usuarios SET
                 nome = :nome,
-                email = :email
+                email = :email,
+                perfil = :perfil
             WHERE id = :id";
 
         $stmt = $pdo->prepare($sql);
@@ -69,6 +84,7 @@
         $stmt->execute([
             ":nome" => $nome,
             ":email" => $email,
+            ":perfil" => $perfil,
             ":id" => $id
         ]);
     }

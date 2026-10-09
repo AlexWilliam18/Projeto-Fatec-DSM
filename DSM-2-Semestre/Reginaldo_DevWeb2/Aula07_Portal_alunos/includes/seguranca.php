@@ -15,3 +15,11 @@
             die("Requisição inválida.");
         }
     }
+
+    // Bloqueia quem não é administrador (chamar no topo das páginas de gerenciamento)
+    function apenasAdmin() {
+        if (!isset($_SESSION["perfil"]) || $_SESSION["perfil"] != "admin") {
+            header("Location: inicio.php");
+            exit;
+        }
+    }

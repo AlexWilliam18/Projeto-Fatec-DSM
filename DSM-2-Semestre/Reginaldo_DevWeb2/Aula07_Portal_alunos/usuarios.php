@@ -1,8 +1,9 @@
 <?php
     require "includes/seguranca.php";
+    apenasAdmin(); // somente administradores
     require "conexao.php";
 
-    $sql = "SELECT id, nome, email FROM usuarios ORDER BY id";
+    $sql = "SELECT id, nome, email, perfil FROM usuarios ORDER BY id";
     $stmt = $pdo->query($sql);
 
     $usuarios = $stmt->fetchall(PDO::FETCH_ASSOC);
@@ -11,6 +12,12 @@
     if (isset($_SESSION["mensagem"])) {
         $mensagem = $_SESSION["mensagem"];
         unset($_SESSION["mensagem"]);
+    }
+
+    $erro = "";
+    if (isset($_SESSION["erro"])) {
+        $erro = $_SESSION["erro"];
+        unset($_SESSION["erro"]);
     }
 ?>
 
@@ -36,6 +43,12 @@
             </p>
         <?php endif; ?>
 
+        <?php if ($erro != ""): ?>
+            <p class="erro">
+                <?= htmlspecialchars($erro) ?>
+            </p>
+        <?php endif; ?>
+
         <p>
             <a href="cadastrar.php">
                 <button>Novo Usuário</button>
@@ -49,6 +62,7 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Perfil</th>
                     <th>Ações</th>
                 </tr>
 
@@ -58,6 +72,7 @@
                         <td><?= htmlspecialchars($u['id']) ?></td>
                         <td><?= htmlspecialchars($u['nome']) ?></td>
                         <td><?= htmlspecialchars($u['email']) ?></td>
+                        <td><?= $u['perfil'] == 'admin' ? 'Administrador' : 'Usuário' ?></td>
 
                         <td class="acoes">
 
@@ -65,6 +80,8 @@
                                 <button type="button">Editar</button>
                             </a>
 
+                            <!-- o botão Excluir não aparece na própria conta -->
+                            <?php if ($u["id"] != $_SESSION["usuario_id"]): ?>
                             <form action="excluir.php" method="POST"
                                   onsubmit="return confirm('Deseja excluir este usuário?')">
 
@@ -74,6 +91,7 @@
                                 <button type="submit" class="perigo">Excluir</button>
 
                             </form>
+                            <?php endif; ?>
 
                         </td>
 

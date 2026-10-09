@@ -15,7 +15,7 @@ body {
     line-height: 1.5;
 }
 
-/* CABEÇALHO */
+/* ------------------------------------------------------------- CABEÇALHO ------------------------------------------------------------- */
 
 .cabecalho {
     background: #931F1D;
@@ -32,7 +32,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* MENU */
+/* ------------------------------------------------------------- MENU ------------------------------------------------------------- */
 
 .menu {
     background: #6f1715;
@@ -52,7 +52,7 @@ body {
     color: #D5DDBC;
 }
 
-/* CONTEÚDO */
+/* ------------------------------------------------------------- CONTEÚDO ------------------------------------------------------------- */
 
 .container {
     max-width: 900px;
@@ -79,7 +79,7 @@ a {
     color: #931F1D;
 }
 
-/* RODAPÉ */
+/* ------------------------------------------------------------- RODAPÉ ------------------------------------------------------------- */
 
 .rodape {
     background: #6f1715;
@@ -88,14 +88,14 @@ a {
     padding: 20px;
 }
 
-/* FORMULÁRIOS */
+/* ------------------------------------------------------------- FORMULÁRIOS ------------------------------------------------------------- */
 
 label {
     font-weight: bold;
     color: #6f1715;
 }
 
-input, textarea {
+input, textarea, select {
     display: block;
     width: 100%;
     padding: 12px;
@@ -106,7 +106,7 @@ input, textarea {
     background: #fdfdf9;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: #931F1D;
 }
@@ -136,10 +136,10 @@ button.perigo:hover {
     background: #2b241d;
 }
 
-/* TABELA */
+/* ------------------------------------------------------------- TABELA ------------------------------------------------------------- */
 
 .tabela-wrap {
-    overflow-x: auto; /* em tela pequena a tabela rola, sem quebrar o layout */
+    overflow-x: auto;
 }
 
 table {
@@ -176,7 +176,7 @@ tr:hover td {
     padding: 8px 14px;
 }
 
-/* MENSAGENS */
+/* ------------------------------------------------------------- MENSAGENS ------------------------------------------------------------- */
 
 .erro {
     background: #f7e4e3;
@@ -196,7 +196,7 @@ tr:hover td {
     font-weight: bold;
 }
 
-/* LOGIN */
+/* ------------------------------------------------------------- LOGIN ------------------------------------------------------------- */
 
 body.login {
     min-height: 100vh;
@@ -229,4 +229,83 @@ body.login {
     display: block;
     margin-top: 20px;
     color: #6b5d4f;
+}
+
+/* ------------------------------------------------------------- RESPONSIVIDADE ------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .container {
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .menu {
+        padding: 10px;
+    }
+
+    .menu a {
+        margin: 4px 8px;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+        min-height: auto;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    form button[type="submit"] {
+        width: 100%;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .acoes button {
+        padding: 6px 10px;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .menu a {
+        margin: 4px 5px;
+        font-size: 0.8rem;
+    }
+
+    .acoes form,
+    .acoes a {
+        display: block;
+    }
 }

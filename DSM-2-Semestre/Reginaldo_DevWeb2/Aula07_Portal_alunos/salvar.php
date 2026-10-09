@@ -1,5 +1,6 @@
 <?php
     require "includes/seguranca.php";
+    apenasAdmin(); // somente administradores
     require "conexao.php";
 
     verificarToken(); // Confere o CRSF
@@ -8,6 +9,12 @@
     $email = trim($_POST["email"]);
     $senha = $_POST["senha"];
     $confirmar = $_POST["confirmar"];
+    $perfil = $_POST["perfil"];
+
+    // só aceita "admin"; qualquer outro valor vira "usuario"
+    if ($perfil != "admin") {
+        $perfil = "usuario";
+    }
 
     // 1 - campos obrigatórios
     if ($nome == "" || $email == "" || $senha == "") {
@@ -39,15 +46,16 @@
     }
 
     // 4 - salvar com senha em hash
-    $sql = "INSERT INTO usuarios (nome, email, senha)
-        VALUES (:nome, :email, :senha)";
+    $sql = "INSERT INTO usuarios (nome, email, senha, perfil)
+        VALUES (:nome, :email, :senha, :perfil)";
 
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
         ":nome" => $nome,
         ":email" => $email,
-        ":senha" => password_hash($senha, PASSWORD_DEFAULT)
+        ":senha" => password_hash($senha, PASSWORD_DEFAULT),
+        ":perfil" => $perfil
     ]);
 
     $_SESSION["mensagem"] = "Usuário cadastrado com sucesso!";

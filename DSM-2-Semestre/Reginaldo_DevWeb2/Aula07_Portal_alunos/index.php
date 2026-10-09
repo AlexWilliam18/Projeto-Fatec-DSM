@@ -25,6 +25,7 @@
 
             $_SESSION["usuario_id"] = $usuario["id"];
             $_SESSION["usuario"] = $usuario["nome"];
+            $_SESSION["perfil"] = $usuario["perfil"];
 
             header("Location: inicio.php");
             exit;

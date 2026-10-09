@@ -24,8 +24,9 @@
             $erro = "A confirmação de senha não confere.";
         } else {
 
-            $sql = "INSERT INTO usuarios (nome, email, senha)
-                        VALUES (:nome, :email, :senha)";
+            // o primeiro usuário já é predefinido como admin
+            $sql = "INSERT INTO usuarios (nome, email, senha, perfil)
+                        VALUES (:nome, :email, :senha, 'admin')";
 
             $stmt = $pdo->prepare($sql);
 

@@ -1,5 +1,6 @@
 <?php
     require "includes/seguranca.php";
+    apenasAdmin(); // somente administradores
 
     // Mensagem de erro do salvar.php
     $erro = "";
@@ -48,6 +49,12 @@
 
                 <label>Confirmar senha:</label>
                 <input type="password" name="confirmar" required>
+
+                <label>Perfil:</label>
+                <select name="perfil">
+                    <option value="usuario">Usuário</option>
+                    <option value="admin">Administrador</option>
+                </select>
 
                 <button type="submit">
                     Salvar

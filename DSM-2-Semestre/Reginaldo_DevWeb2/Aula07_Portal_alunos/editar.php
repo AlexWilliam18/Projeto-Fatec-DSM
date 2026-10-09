@@ -1,10 +1,11 @@
 <?php
     require "includes/seguranca.php";
+    apenasAdmin(); // somente administradores
     require "conexao.php";
 
     $id = $_GET['id'];
 
-    $sql = "SELECT id, nome, email FROM usuarios WHERE id = :id";
+    $sql = "SELECT id, nome, email, perfil FROM usuarios WHERE id = :id";
 
     $stmt = $pdo->prepare($sql);
 
@@ -78,6 +79,12 @@
 
                 <label>Confirmar nova senha:</label>
                 <input type="password" name="confirmar">
+
+                <label>Perfil:</label>
+                <select name="perfil">
+                    <option value="usuario" <?= $usuario["perfil"] == "usuario" ? "selected" : "" ?>>Usuário</option>
+                    <option value="admin" <?= $usuario["perfil"] == "admin" ? "selected" : "" ?>>Administrador</option>
+                </select>
 
                 <button type="submit">
                     Atualizar
