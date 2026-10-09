@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
 
-    if ($usuario == "aluno" && $senha == "1234") {
+    if ($usuario == "aluno" && $senha == "12345") {
 
         $_SESSION["usuario"] = $usuario;
 
