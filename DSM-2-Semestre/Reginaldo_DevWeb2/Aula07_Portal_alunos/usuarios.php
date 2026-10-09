@@ -1,26 +1,24 @@
 <?php
-require "includes/seguranca.php";
-require "conexao.php";
+    require "includes/seguranca.php";
+    require "conexao.php";
 
-$sql = "SELECT id, nome, email FROM usuarios ORDER BY id";
-$stmt = $pdo->query($sql);
+    $sql = "SELECT id, nome, email FROM usuarios ORDER BY id";
+    $stmt = $pdo->query($sql);
 
-$usuarios = $stmt->fetchall(PDO::FETCH_ASSOC);
+    $usuarios = $stmt->fetchall(PDO::FETCH_ASSOC);
 
-$mensagem = "";
-if (isset($_SESSION["mensagem"])) {
-    $mensagem = $_SESSION["mensagem"];
-    unset($_SESSION["mensagem"]);
-}
+    $mensagem = "";
+    if (isset($_SESSION["mensagem"])) {
+        $mensagem = $_SESSION["mensagem"];
+        unset($_SESSION["mensagem"]);
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Usuários</title>
-    <link rel="stylesheet" href="estilo.css">
+    <?php include "includes/head.php" ?>
 </head>
 <body>
 

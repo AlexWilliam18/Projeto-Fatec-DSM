@@ -1,14 +1,12 @@
 <?php
-require "includes/seguranca.php";
+    require "includes/seguranca.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Início</title>
-    <link rel="stylesheet" href="estilo.css">
+    <?php include "includes/head.php" ?>
 </head>
 <body>
 
@@ -18,7 +16,7 @@ require "includes/seguranca.php";
 
     <main class="container">
 
-        <h2>Bem-vindo ao Portal!</h2>
+        <h2>Bem-vindo ao Portal Alunos!</h2>
 
         <p>
             Olá,

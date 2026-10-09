@@ -1,21 +1,19 @@
 <?php
-require "includes/seguranca.php";
+    require "includes/seguranca.php";
 
-// Mensagem de erro do salvar.php
-$erro = "";
-if (isset($_SESSION["erro"])) {
-    $erro = $_SESSION["erro"];
-    unset($_SESSION["erro"]);
-}
+    // Mensagem de erro do salvar.php
+    $erro = "";
+    if (isset($_SESSION["erro"])) {
+        $erro = $_SESSION["erro"];
+        unset($_SESSION["erro"]);
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Novo Usuário</title>
-    <link rel="stylesheet" href="estilo.css">
+    <?php include "includes/head.php" ?>
 </head>
 <body>
 

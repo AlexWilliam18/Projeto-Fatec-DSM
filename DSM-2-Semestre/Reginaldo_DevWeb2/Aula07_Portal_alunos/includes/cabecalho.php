@@ -1,4 +1,4 @@
 <header class="cabecalho">
-    <h1>PORTAL CONECTA</h1>
+    <h1>PORTAL ALUNOS</h1>
     <p>Gerencie pessoas, simplifique acessos.</p>
 </header>

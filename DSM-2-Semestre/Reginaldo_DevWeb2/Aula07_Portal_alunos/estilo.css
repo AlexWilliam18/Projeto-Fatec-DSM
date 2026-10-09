@@ -230,25 +230,3 @@ body.login {
     margin-top: 20px;
     color: #6b5d4f;
 }
-
-/* TELAS PEQUENAS */
-
-@media (max-width: 600px) {
-
-    .cabecalho {
-        padding: 20px;
-    }
-
-    .container {
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    .menu a {
-        margin: 4px 8px;
-    }
-
-    .card {
-        padding: 18px;
-    }
-}

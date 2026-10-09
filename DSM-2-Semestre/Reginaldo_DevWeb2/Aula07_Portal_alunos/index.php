@@ -1,56 +1,54 @@
 <?php
-session_start();
-require "conexao.php";
+    session_start();
+    require "conexao.php";
 
-$erro = "";
+    $erro = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
 
-    $sql = "SELECT * FROM usuarios WHERE email = :email";
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
 
-    $stmt = $pdo->prepare($sql);
+        $stmt = $pdo->prepare($sql);
 
-    $stmt->execute([
-        ":email" => $email
-    ]);
+        $stmt->execute([
+            ":email" => $email
+        ]);
 
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($usuario && password_verify($senha, $usuario["senha"])) {
+        if ($usuario && password_verify($senha, $usuario["senha"])) {
 
-        session_regenerate_id(true);
+            session_regenerate_id(true);
 
-        $_SESSION["usuario_id"] = $usuario["id"];
-        $_SESSION["usuario"] = $usuario["nome"];
+            $_SESSION["usuario_id"] = $usuario["id"];
+            $_SESSION["usuario"] = $usuario["nome"];
 
-        header("Location: inicio.php");
-        exit;
+            header("Location: inicio.php");
+            exit;
 
-    } else {
-        $erro = "E-mail ou senha incorretos!";
+        } else {
+            $erro = "E-mail ou senha incorretos!";
+        }
+
     }
 
-}
-
-$total = $pdo->query("SELECT COUNT(*) FROM usuarios")->fetchColumn();
+    $total = $pdo->query("SELECT COUNT(*) FROM usuarios")->fetchColumn();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login - Portal Conecta</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Login - Portal Alunos</title>
+    <?php include "includes/head.php" ?>
 </head>
 <body class="login">
 
     <div class="login-box">
 
-        <h1>Portal Conecta</h1>
+        <h1>Portal Alunos</h1>
         <p>Faça seu login</p>
 
         <?php if ($erro != ""): ?>
