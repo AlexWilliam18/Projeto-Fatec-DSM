@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+/* PALETA DO PORTAL CONECTA
+   Deep Crimson #931F1D | Faded Copper #937B63 | Palm Leaf #8A9B68
+   Dry Sage #B6C197     | Beige #D5DDBC
+   (tom mais escuro do crimson para o menu/rodapé: #6f1715) */
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    background: #D5DDBC;
+    color: #2b241d;
+    line-height: 1.5;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background: #931F1D;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    min-height: 115px;
+    border-bottom: 4px solid #937B63;
+}
+
+.cabecalho h1 {
+    margin: 0 0 10px;
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+}
+
+/* MENU */
+
+.menu {
+    background: #6f1715;
+    padding: 15px;
+    text-align: center;
+}
+
+.menu a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 4px 14px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #D5DDBC;
+}
+
+/* CONTEÚDO */
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    min-height: 350px;
+}
+
+.container h2 {
+    font-family: Georgia, serif;
+    color: #931F1D;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #2b241d22;
+    margin-top: 20px;
+    border-top: 4px solid #937B63;
+}
+
+a {
+    color: #931F1D;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    background: #6f1715;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* FORMULÁRIOS */
+
+label {
+    font-weight: bold;
+    color: #6f1715;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 2px solid #B6C197;
+    border-radius: 6px;
+    font: inherit;
+    background: #fdfdf9;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #931F1D;
+}
+
+button {
+    background: #931F1D;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #6f1715;
+}
+
+/* Excluir em marrom escuro, para não se confundir com os botões vermelhos normais */
+button.perigo {
+    background: #4a3b2c;
+    color: white;
+}
+
+button.perigo:hover {
+    background: #2b241d;
+}
+
+/* TABELA */
+
+.tabela-wrap {
+    overflow-x: auto; /* em tela pequena a tabela rola, sem quebrar o layout */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #D5DDBC;
+}
+
+th {
+    background: #931F1D;
+    color: white;
+}
+
+tr:hover td {
+    background: #eef1e2;
+}
+
+.acoes {
+    white-space: nowrap;
+}
+
+.acoes form,
+.acoes a {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+}
+
+.acoes button {
+    padding: 8px 14px;
+}
+
+/* MENSAGENS */
+
+.erro {
+    background: #f7e4e3;
+    color: #931F1D;
+    border-left: 5px solid #931F1D;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.sucesso {
+    background: #B6C197;
+    color: #2a3416;
+    border-left: 5px solid #8A9B68;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* LOGIN */
+
+body.login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #931F1D;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    border-top: 5px solid #937B63;
+}
+
+.login-box h1 {
+    font-family: Georgia, serif;
+    color: #931F1D;
+}
+
+.login-box button {
+    width: 100%;
+}
+
+.login-box small {
+    display: block;
+    margin-top: 20px;
+    color: #6b5d4f;
+}
+
+/* TELAS PEQUENAS */
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        padding: 20px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .menu a {
+        margin: 4px 8px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
