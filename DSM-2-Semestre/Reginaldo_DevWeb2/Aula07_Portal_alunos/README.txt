@@ -8,7 +8,7 @@ Portal em PHP com login real (usuários no MySQL), CRUD de usuários e perfis
 PASSO A PASSO
 =============
 
-1) CRIAR O BANCO DE DADOS (fazer isto primeiro)
+1 - CRIAR O BANCO DE DADOS (fazer isto primeiro)
 -----------------------------------------------
 Abra o MySQL da mesma forma que usamos nas aulas e execute o arquivo
 banco.sql inteiro.
@@ -28,7 +28,7 @@ banco.sql inteiro.
   - Se o banco "portal" já existia antes (sem a coluna perfil), execute o código deixado no arquivo banco.sql com a mensagem em CAPSLOCK, ou apague o banco (DROP DATABASE portal;) e rode o banco.sql de novo.
 
 
-2) CONFERIR A CONEXÃO
+2 - CONFERIR A CONEXÃO
 ---------------------
 Abra o conexao.php e confira se os dados são os do seu MySQL:
 
@@ -37,11 +37,7 @@ Abra o conexao.php e confira se os dados são os do seu MySQL:
     $usuario = "root";
     $senha = "";
 
-Se o seu MySQL tem senha ou usa outra porta, ajuste aqui (a porta 3306 está
-na string de conexão do PDO).
-
-
-3) COLOCAR O PROJETO NO SERVIDOR
+3 - COLOCAR O PROJETO NO SERVIDOR
 --------------------------------
 Copie a pasta do projeto (Aula07_Portal_alunos) para a pasta pública do
 servidor local:
@@ -52,12 +48,12 @@ Os arquivos (index.php, conexao.php, estilo.css, pasta includes etc.) devem
 ficar direto dentro dessa pasta.
 
 
-4) INICIAR OS SERVIÇOS
+4 - INICIAR OS SERVIÇOS
 ----------------------
 Inicie o Apache e o MySQL (painel do XAMPP).
 
 
-5) CRIAR O PRIMEIRO USUÁRIO
+5 - CRIAR O PRIMEIRO USUÁRIO
 ---------------------------
 1. No navegador, acesse: http://localhost/Aula07_Portal_alunos/
 2. A tela de login avisa "Nenhum usuário cadastrado". Clique em
@@ -67,7 +63,7 @@ Inicie o Apache e o MySQL (painel do XAMPP).
    sozinha depois do primeiro cadastro.
 
 
-6) ENTRAR E USAR
+6 - ENTRAR E USAR
 ----------------
 1. Faça login com o e-mail e a senha criados.
 2. Como administrador você vê o menu completo:
